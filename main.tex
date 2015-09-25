@@ -1,0 +1,154 @@
+\documentclass[12pt,oneside]{report}
+\usepackage[utf8]{inputenc}
+\usepackage{graphicx}
+\graphicspath{ {images/} }
+\usepackage{caption}
+\usepackage{subcaption}
+\usepackage[a4paper,top=38mm,left=38mm,right=25mm,bottom=25mm]{geometry}
+\usepackage{fancyhdr}
+\usepackage{setspace}
+
+\usepackage{multicol}
+\usepackage{tabularx}
+\usepackage{acronym}
+\usepackage{lastpage}
+\usepackage[titletoc]{appendix}
+\usepackage{listings}
+\usepackage[hyphens]{url}
+\usepackage[hidelinks]{hyperref}
+\hypersetup{breaklinks=true}
+\urlstyle{same}
+% Macros for title, author, abstract, etc.
+\include{preliminaries}
+
+	\pagestyle{fancy}
+	\fancyhead{}
+	\fancyhead[RO,LE]{\runninghead}
+	\fancyfoot{}
+	\fancyfoot[LE,RO]{\thepage}
+	\fancyfoot[LO,CE]{Chapter \thechapter}
+	\fancyfoot[CO,RE]{\authorname}
+	\renewcommand{\headrulewidth}{0.4pt}
+	\renewcommand{\footrulewidth}{0.4pt}
+	
+
+
+%-----------------------------------------------
+
+\usepackage{apacite}
+\usepackage{etoolbox}
+\usepackage{environ}
+
+\newtoggle{bibdoi}
+\newtoggle{biburl}
+\makeatletter
+
+\undef{\APACrefURL}
+\undef{\endAPACrefURL}
+\undef{\APACrefDOI}
+\undef{\endAPACrefDOI}
+
+\long\def\collect@url#1{\global\def\bib@url{#1}}
+\long\def\collect@doi#1{\global\def\bib@doi{#1}}
+\newenvironment{APACrefURL}{\global\toggletrue{biburl}\Collect@Body\collect@url}{\unskip\unskip}
+\newenvironment{APACrefDOI}{\global\toggletrue{bibdoi}\Collect@Body\collect@doi}{}
+
+\AtBeginEnvironment{thebibliography}{
+	\pretocmd{\PrintBackRefs}{%
+		\iftoggle{bibdoi}
+		{\iftoggle{biburl}{\unskip\unskip doi:\bib@doi}{}}
+		{\iftoggle{biburl}{Retrieved from\bib@url}{}}
+		\togglefalse{bibdoi}\togglefalse{biburl}%
+	}{}{}
+}
+%-------------------------------
+
+\begin{document}
+
+
+\input{justtitle}
+
+\input{titlepage}
+
+\input{detailpage}
+\doublespacing
+\pagenumbering{roman}
+\input{abstract}
+
+\chapter*{Dedication}
+\dedications
+
+  
+\chapter*{Acknowledgements}
+\acknowledgments
+
+
+
+
+\clearpage                       % Otherwise \pagestyle affects the previous page.
+{                                % Enclosed in braces so that re-definition is temporary.
+	\pagestyle{empty}              % Removes numbers from middle pages.
+	\fancypagestyle{plain}         % Re-definition removes numbers from first page.
+	{
+		\fancyhf{}%                       % Clear all header and footer fields.
+		\renewcommand{\headrulewidth}{0pt}% Clear rules (remove these two lines if not desired).
+		\renewcommand{\footrulewidth}{0pt}%
+	}
+	\tableofcontents
+	\thispagestyle{empty}          % Removes numbers from last page.
+}
+
+
+\listoffigures
+
+
+\listoftables
+
+\chapter*{List Of Acronyms}
+\thesisabbr
+
+
+\clearpage    
+
+\pagenumbering{arabic}	
+
+\chapter{Introduction}
+\input{chapters/introduction}
+
+\chapter{Aims and Objectives}
+\input{chapters/aims_objectives}
+
+\chapter{Review of Literature}
+\input{chapters/review_of_literature}
+
+\chapter{Materials and Methods}
+\input{chapters/materials_methods}
+
+\chapter{Results}
+\input{chapters/results}
+
+\chapter{Discussion}
+\input{chapters/discussion}
+
+
+\chapter{Conclusion}
+\input{chapters/conclusion}
+
+\bibliographystyle{apacite}
+\bibliography{references}
+
+\begin{appendices}
+	\chapter{Appendix 1 Title}
+	\input{chapters/appendix1}
+	\chapter{Appendix 2 Title}
+	\input{chapters/appendix2}	
+	\chapter{Appendix 3 Title}
+	\input{chapters/appendix3}	
+	\chapter{Appendix 4 Title}
+	\input{chapters/appendix4}	
+	\chapter{Appendix 5 Title}
+	\input{chapters/appendix5}	
+\end{appendices}
+
+
+\end{document}

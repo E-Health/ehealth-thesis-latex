@@ -1,0 +1,118 @@
+\newcommand \thesistitle{Title of my Thesis}
+
+\newcommand \degreename{Master of Science}
+
+% Use the wording given in the official list of degrees awarded by UCI:
+% http://www.rgs.uci.edu/grad/academic/degrees_offered.htm
+\newcommand \degreefield{eHealth}
+
+% Your name as it appears on official UCI records.
+\newcommand \authorname{Firstname Lastname}
+
+% Use the full name of each committee member.
+\newcommand \committeechair{Dr. First Supervisor}
+\newcommand \othercommitteemembers
+{
+  Dr. Second Supervisor\\
+  Dr. Third Supervisor\\
+  Dr. Fourth Supervisor
+}
+
+\newcommand \degreeyear{YEAR}
+
+\newcommand \degreemonth{MONTH}
+
+\newcommand \univname{McMaster University}
+
+\newcommand{\HRule}{\rule{\linewidth}{0.5mm}}
+
+\newcommand \copyrightdeclaration
+{
+  {\copyright} {\Degreeyear} \Authorname
+}
+
+
+% The dedication page is optional.
+\newcommand \dedications
+{
+  This is dedicated to http://nuchange.ca
+}
+
+
+\newcommand \acknowledgments
+{
+  Foremost, I would like to express my gratitude to the person who created this LaTeX template. 
+
+\noindent
+My teachers 
+
+\noindent
+My friends 
+
+\noindent
+My batch mates 
+
+\noindent
+My survey participants
+
+\noindent
+My colleagues 
+
+\noindent
+My parents 
+
+\noindent
+My wife 
+
+
+\noindent
+And to all others .
+
+
+}
+
+
+% Some custom commands for your list of publications and software.
+\newcommand{\mypubentry}[3]{
+  \begin{tabular*}{1\textwidth}{@{\extracolsep{\fill}}p{4.5in}r}
+    \textbf{#1} & \textbf{#2} \\ 
+    \multicolumn{2}{@{\extracolsep{\fill}}p{.95\textwidth}}{#3}\vspace{6pt} \\
+  \end{tabular*}
+}
+\newcommand{\mysoftentry}[3]{
+  \begin{tabular*}{1\textwidth}{@{\extracolsep{\fill}}lr}
+    \textbf{#1} & \url{#2} \\
+    \multicolumn{2}{@{\extracolsep{\fill}}p{.95\textwidth}}
+    {\emph{#3}}\vspace{-6pt} \\
+  \end{tabular*}
+}
+
+% Include, at minimum, a listing of your degrees and educational
+% achievements with dates and the school where the degrees were
+% earned. This should include the degree currently being
+% attained. Other than that it's mostly up to you what to include here
+% and how to format it, below is just an example.
+\newcommand \runninghead
+{
+Running head here.
+}
+
+\newcommand \thesisabbr{
+	%\Huge
+%List Of Acronyms	\\
+%\normalsize
+\textbf{DAD} - Discharge Abstract Database \\
+\textbf{HMDB} - Hospital Morbidity Database  \\
+
+}
+
+% The abstract should not be over 350 words, although that's
+% supposedly somewhat of a soft constraint.
+\newcommand \thesisabstract
+{
+  This is my abstract. Please visit http://nuchange.ca for more details
+
+ 
+
+}
+
