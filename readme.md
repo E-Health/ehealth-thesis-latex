@@ -1,4 +1,4 @@
-# eHealth Thesis Latex Template
+# eHealth Thesis Latex Template (McMaster)
 
 ## Disclaimer: 
 > This is not an official template, use this at your risk. If you find any mistakes, fork it and improve it.
