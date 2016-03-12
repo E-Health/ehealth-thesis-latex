@@ -16,3 +16,5 @@
 ### Feel free to improve it. Pull-requests to merge your improvements are welcome. 
 
 ## Visit [NuChange.ca Blog](http://nuchange.ca) for more details.
+
+## Found this useful? Join us on [ProDENTS!](http://prodents.com)
