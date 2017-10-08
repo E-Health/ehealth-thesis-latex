@@ -17,4 +17,4 @@
 
 ## Visit [NuChange.ca Blog](http://nuchange.ca) for more details.
 
-## Found this useful? Join us on [ProDENTS!](http://prodents.com)
+## Found this useful? Join us on [CanEHealth Group](http://canehealth.com)
